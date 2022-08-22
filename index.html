@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="calendar">
+        <div class="month">
+          <i class="fas fa-angle-left prev"></i>
+          <div class="date">
+            <h1></h1>
+            <p></p>
+          </div>
+          <i class="fas fa-angle-right next"></i>
+        </div>
+        <div class="weekdays">
+          <div>Sunday</div>
+          <div>Monday</div>
+          <div>Tuesday</div>
+          <div>Wednsday</div>
+          <div>Thursday</div>
+          <div>Friday</div>
+          <div>Saturday</div>
+        </div>
+        <div class="days"></div>
+        <div class="easy-buttons">
+          <div class="create-activity" title="Add activity">+</div>
+          <div class="show-all-activity" title="List activities">
+            <ion-icon name="eye-outline" style="pointer-events:none"></ion-icon>
+          </div>
+          <div class="delete-activity" title="Delete activity">
+            <ion-icon name="trash" style="pointer-events:none"></ion-icon>
+          </div>
+          <div class="edit-activity" title="Edit activity">
+            <ion-icon name="pencil" style="pointer-events:none"></ion-icon>
+          </div>
+          <div class="share-activity" title="Share activity">
+            <ion-icon name="share-social" style="pointer-events:none"></ion-icon>
+          </div>
+          <div class="info" title="User Information">
+            <ion-icon name="information-circle-outline" style="pointer-events:none"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <section class="section-cta">
+        <div class="section-container">
+          <div class="cta">
+            <div class="cta-text-box">
+              <h2 class="secondary-heading">Create Your Task</h2>
+              <form class="cta-form">
+                <label for="date">Date *</label>
+                <input id="date" type="date" value="" name="" />
+                <label for="title-task">Title *</label>
+                <input
+                  id="title-task"
+                  type="text"
+                  placeholder="Enter Title For Your Task"
+                />
+                <div class="category-box">
+                  <div class="short-title-box">
+                    <label for="short-title">Short Title *</label>
+                    <input
+                      type="text"
+                      id="short-title"
+                      placeholder="Enter Short Title"
+                    />
+                  </div>
+                  <div class="tag-box">
+                    <label for="task-tag">Tag *</label>
+                    <select id="tag">
+                      <option>Select tag</option>
+                      <option value="work">Work</option>
+                      <option value="education">Education</option>
+                      <option value="health">Health</option>
+                      <option value="personal">Personal</option>
+                      <option value="social">Social</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="time-box">
+                  <div class="start-time-box">
+                    <label for="start-time">Start Time *</label>
+                    <input type="time" id="start-time" />
+                  </div>
+                  <div class="end-time-box">
+                    <label for="end-time">End Time *</label>
+                    <input type="time" id="end-time" />
+                  </div>
+                </div>
+
+                <label for="alarm">Enable Alarm</label>
+                <label>
+                  <input class="checkbox" id="alarmCheckBox" type="checkbox" />
+                  <span class="check"></span>
+                </label>
+                <div class="enable-alarm">
+                  <div class="alarm-box">
+                    <label for="enabled-alaram"
+                      >Set minutes before activity</label>
+                    <input
+                      type="number"
+                      min="5"
+                      step="5"
+                      max="30"
+                      value="30"
+                      id="alarmTime"
+                    />
+                  </div>
+                  <div class="repeat-box">
+                    <label for="repeat">Set Repeating Activity</label>
+                    <select id="repeat">
+                      <option value="Don't repeat">Don't repeat</option>
+                      <option value="Daily">Daily</option>
+                      <option value="Weekly">Weekly</option>
+                      <option value="Monthly">Monthly</option>
+                      <option value="Yearly">Yearly</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="buttons">
+                  <button class="btn btn-add" type="submit">Add</button>
+                  <button class="btn btn-close">Close</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="task-window">
+        <div class="task-icons">
+          <ion-icon name="pencil" class="edit-icon"></ion-icon>
+          <ion-icon name="trash" class="delete-icon"></ion-icon>          
+        </div>
+        <div class="heading-task">
+          <div class="squere"></div>
+          <div class="text-task">
+            <p class="task-title">haohs</p>
+            <p class="date-task">202-08-18 - 10:38 - 14:20</p>
+          </div>
+        </div>
+        <div class="reminder-box">
+          <ion-icon name="alarm-outline" class="alarm-icon"></ion-icon>
+          <p class="text-alarm">30 minutes before</p>
+        </div>
+        <div class="task-type">
+          <ion-icon name="calendar-clear-outline" class="icon-type"></ion-icon>
+          <p class="text-type">School</p>
+        </div>
+        <div class="close-window">X</div>
+      </div>
+      <div class="show-all-tasks-section">
+        <h2 class="secondary-heading">List of your activities</h2>
+        <div class="filter-task">
+          <ion-icon name="filter"></ion-icon>
+          <label for="filter-label">&ensp;Filter by tag: &ensp;</label><br><br>
+          <select id="filter">
+            <option value="All">All</option>
+            <option value="work">Work</option>
+            <option value="education">Education</option>
+            <option value="health">Health</option>
+            <option value="personal">Personal</option>
+            <option value="social">Social</option>
+          </select>
+        </div>
+        <button class="close-show-tasks">X</button>
+      </div>
+      <div class="pop-up">
+        <h2 class="pop-heading">Reminder</h2>
+        <p class="pop-paragraph">You have task for 15min</p>
+        <button class="pop-up-ok">OK</button>
+      </div>
+    </div>
+    <p class="welcome-new"> Welcome to your personal time manager!</p>
+    <script src="./script.js"></script>
+  </body>
+</html>
